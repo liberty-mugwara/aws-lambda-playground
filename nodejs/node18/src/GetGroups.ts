@@ -1,3 +1,4 @@
+import { APIGatewayEvent, APIGatewayProxyResult } from "aws-lambda";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
@@ -23,7 +24,9 @@ const ddbDocumentClient = DynamoDBDocumentClient.from(ddbClient, {
   unmarshallOptions,
 });
 
-export const handler = async (event: any) => {
+export async function handler(
+  event: APIGatewayEvent
+): Promise<APIGatewayProxyResult> {
   const scanParams = {
     TableName: "Groups",
   };
@@ -37,4 +40,4 @@ export const handler = async (event: any) => {
     },
     body: JSON.stringify({ items: res.Items || [] }),
   };
-};
+}
