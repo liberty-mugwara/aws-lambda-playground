@@ -1,0 +1,22 @@
+{
+  "name": "aws-node-18-lambdas",
+  "version": "1.0.0",
+  "description": "node 18 aws lambdas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Liberty Mugwara",
+  "license": "MIT",
+  "volta": {
+    "node": "18.13.0"
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.245.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "typescript": "^4.9.4"
+  }
+}
