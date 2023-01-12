@@ -5,7 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cleanup": "rimraf dist || true",
+    "build": "npm run cleanup && tsc"
   },
   "author": "Liberty Mugwara",
   "license": "MIT",
@@ -13,7 +15,9 @@
     "node": "18.13.0"
   },
   "dependencies": {
-    "@aws-sdk/client-dynamodb": "^3.245.0"
+    "@aws-sdk/client-dynamodb": "^3.245.0",
+    "@aws-sdk/lib-dynamodb": "^3.245.0",
+    "rimraf": "^3.0.2"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
